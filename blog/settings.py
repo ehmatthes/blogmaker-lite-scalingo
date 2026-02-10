@@ -137,10 +137,6 @@ if True:
     root = environ.Path(__file__)
     DEBUG = True
 
-    DATABASES = {
-        "default": env.db("DATABASE_URL", default=f"file:///{BASE_DIR / 'db.sqlite3'}"),
-    }
-
     STATIC_ROOT = 'staticfiles'
     STATIC_URL = '/static/'
 
