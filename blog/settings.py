@@ -131,3 +131,28 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # My settings.
 LOGIN_URL = "users:login"
+
+if True:
+    import environ
+    root = environ.Path(__file__)
+    DEBUG = True
+
+    DATABASES = {
+        "default": env.db("DATABASE_URL", default=f"file:///{BASE_DIR / 'db.sqlite3'}"),
+    }
+
+    STATIC_ROOT = 'staticfiles'
+    STATIC_URL = '/static/'
+
+    STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, 'static'),
+    )
+
+    MIDDLEWARE.insert(1, "whitenoise.middleware.WhiteNoiseMiddleware")
+
+    STORAGES = {
+        "staticfiles": {
+            "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        },
+    }
+    ALLOWED_HOSTS = ["*"]
