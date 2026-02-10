@@ -1,3 +1,9 @@
 django
 django-bootstrap5
 requests
+
+django-environ
+psycopg
+gunicorn
+dj-static
+whitenoise
