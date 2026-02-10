@@ -35,7 +35,6 @@ INSTALLED_APPS = [
     "blogs",
     "users",
     # Third party apps.
-    'django_simple_deploy',
     "django_bootstrap5",
     # Default django apps.
     "django.contrib.admin",
@@ -135,7 +134,7 @@ LOGIN_URL = "users:login"
 if True:
     import environ
     import os
-    
+
     root = environ.Path(__file__)
     DEBUG = True
 
