@@ -137,9 +137,9 @@ if True:
 
     DEBUG = True
 
-    DATABASES = {
-        "default": os.environ.get("DATABASE_URL"),
-    }
+    # DATABASES = {
+    #     "default": os.environ.get("DATABASE_URL"),
+    # }
 
     STATIC_ROOT = 'staticfiles'
     STATIC_URL = '/static/'
