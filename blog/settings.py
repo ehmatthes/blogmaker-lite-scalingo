@@ -134,12 +134,18 @@ LOGIN_URL = "users:login"
 if True:
     import environ
     import os
+    import dj_database_url
 
     DEBUG = True
 
-    # DATABASES = {
-    #     "default": os.environ.get("DATABASE_URL"),
-    # }
+    DATABASES = {
+        "default": dj_database_url.config(
+            env="DATABASE_URL",
+            conn_max_age=600,
+            conn_health_checks=True,
+            ssl_require=True,
+        ),
+    }
 
     STATIC_ROOT = 'staticfiles'
     STATIC_URL = '/static/'
