@@ -135,8 +135,11 @@ if True:
     import environ
     import os
 
-    root = environ.Path(__file__)
     DEBUG = True
+
+    DATABASES = {
+        "default": os.environ.get("DATABASE_URL"),
+    }
 
     STATIC_ROOT = 'staticfiles'
     STATIC_URL = '/static/'
