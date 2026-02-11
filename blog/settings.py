@@ -131,9 +131,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # My settings.
 LOGIN_URL = "users:login"
 
-if True:
+import os
+if "scalingo" in os.environ.get("STACK", ""):
     import environ
-    import os
     import dj_database_url
 
     DEBUG = True
